@@ -1,0 +1,6 @@
+- name: ensure git is installed
+  apt: name=git state=present
+  become: yes
+
+- name: be sure git is configured
+  copy: src=gitconfig dest={{ ansible_env.HOME }}/.gitconfig owner={{ ansible_user_id }}
