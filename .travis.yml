@@ -5,5 +5,5 @@ branches:
 script: ansible-playbook workstation.yml -vv
 
 before_script:
-    - sudo pip install ansible
+    - sudo apt-get install ansible
     - rm -rf ~/.vim
