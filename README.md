@@ -9,15 +9,19 @@ Install Ansible
 ---------------
 
 ```bash
-apt-get install ansible
+sudo apt-get install ansible
 ```
 
 Run
 ---
 
-### workstation
 ```bash
 ansible-playbook workstation.yml --ask-sudo-pass
 ```
 
-> Based on https://github.com/renanivo/playbooks
+Notes
+-----
+
+In Xubuntu 14.04 is necessary add parameter `validate_certs=no` in Vim configuration task (for Ubuntu 12.04 is not necessary).
+
+> This repo is based on https://github.com/renanivo/playbooks
