@@ -19,9 +19,4 @@ Run
 ansible-playbook workstation.yml --ask-sudo-pass
 ```
 
-Notes
------
-
-In Xubuntu 14.04 is necessary add parameter `validate_certs=no` in Vim configuration task (for Ubuntu 12.04 is not necessary).
-
 > This repo is based on https://github.com/renanivo/playbooks
