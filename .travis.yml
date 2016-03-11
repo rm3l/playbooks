@@ -7,3 +7,4 @@ script: ansible-playbook workstation.yml -vv
 before_script:
     - sudo apt-get install ansible
     - rm -rf ~/.vim
+    - rm -rf ~/.ssh
