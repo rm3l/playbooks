@@ -1,10 +1,6 @@
-branches:
-    only:
-        - master
-
 script: ansible-playbook workstation.yml -vv
 
 before_script:
-    - pip install ansible
+    - sudo apt-get install ansible
     - rm -rf ~/.vim
     - rm -rf ~/.ssh
