@@ -5,3 +5,4 @@
 - name: be sure ack is ack and not ack-grep
   command: dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
   sudo: yes
+  ignore_errors: True
