@@ -1,0 +1,9 @@
+branches:
+    only:
+        - master
+
+script: ansible-playbook workstation.yml -vv
+
+before_script:
+    - sudo pip install ansible
+    - rm -rf ~/.vim
