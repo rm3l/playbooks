@@ -1,6 +1,7 @@
 - hosts:
     - home
   roles:
+    - ubuntu
     - git
     - vim
     - terminator
