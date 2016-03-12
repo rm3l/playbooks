@@ -1,0 +1,12 @@
+- name: ensure sisimedia_drv is on xorg modules dir
+  copy: src={{ item }} dest=/usr/lib/xorg/modules/drivers/{{ item }} mode=755
+  with_items:
+    - sisimedia_drv.la
+    - sisimedia_drv.so
+  sudo: yes
+  ignore_errors: True
+
+- name: ensure xorg conf file is on /etc dir
+  copy: src=xorg.conf dest=/etc/X11/xorg.conf mode=660
+  sudo: yes
+  ignore_errors: True
