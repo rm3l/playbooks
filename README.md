@@ -19,4 +19,10 @@ Run
 ansible-playbook workstation.yml --ask-sudo-pass
 ```
 
+Tested on
+---------
+
+* Lubuntu 15
+* Xubuntu 14
+
 > This repo is based on https://github.com/renanivo/playbooks
