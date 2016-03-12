@@ -1,5 +1,5 @@
 - name: ensure vim is installed
-  apt: name=vim state=present
+  apt: name=vim-gnome state=present
   sudo: yes
 
 - name: be sure vim configurations are updated
