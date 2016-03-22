@@ -1,0 +1,3 @@
+- name: ensure curl is installed
+  pacman: name=curl state=present
+  sudo: yes
