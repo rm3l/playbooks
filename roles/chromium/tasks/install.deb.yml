@@ -1,0 +1,3 @@
+- name: ensure chromium-browser is installed
+  apt: name=chromium-browser state=present
+  sudo: yes
