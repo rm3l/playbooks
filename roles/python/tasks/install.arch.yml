@@ -1,0 +1,3 @@
+- name: ensure python setup-tools is installed
+  pacman: name=python-setuptools state=present
+  sudo: yes
