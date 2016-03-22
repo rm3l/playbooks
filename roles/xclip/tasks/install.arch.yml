@@ -1,0 +1,3 @@
+- name: ensure xclip is installed
+  pacman: name=xclip state=present
+  sudo: yes
