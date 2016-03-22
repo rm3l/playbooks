@@ -1,0 +1,100 @@
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+
+""""""""""""""""""""""""""""""""""
+" NeoBundle Plugin Manager Stuff "
+""""""""""""""""""""""""""""""""""
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+
+if !filereadable(neobundle_readme)
+  echo "Installing NeoBundle..."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Plugins Installation
+NeoBundle 'tomasr/molokai'
+
+call neobundle#end()
+NeoBundleCheck
+
+filetype plugin indent on
+
+""""""""""""""""""""""""""""""""
+" Tab and indentation settings "
+""""""""""""""""""""""""""""""""
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set softtabstop=4
+set smarttab
+
+set backspace=eol,start,indent
+
+"""""""""""""""""""""""
+" Don't create backup "
+"""""""""""""""""""""""
+set nobackup
+set nowritebackup
+set noswapfile
+
+"""""""""""""""""""
+" Search settings "
+"""""""""""""""""""
+set hlsearch
+set incsearch
+set ignorecase
+
+"""""""""""""""""""
+" Visual settings "
+"""""""""""""""""""
+" use this TRY..CATCH to avoid 'press enter to continue' in vim installation
+try
+    colorscheme molokai
+catch
+endtry
+
+syntax on
+
+" highlight current line
+set cursorline
+highlight CursorLine ctermbg=237
+
+" show linenumber
+set nu
+
+" colors
+set t_Co=256
+
+"""""""""""""""""
+" Auto commands "
+"""""""""""""""""
+" remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" show colorcolumn for column 80 in python files
+augroup python
+    au!
+    autocmd FileType python set colorcolumn=80
+augroup END
+
+" auto syntax for *.md files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+""""""""""""""""""""
+" Plugins Settings "
+""""""""""""""""""""
+" netrw
+let g:netrw_list_hide= '.*\.swp$,.*\.pyc'
+let g:netrw_localrmdir="rm -r"

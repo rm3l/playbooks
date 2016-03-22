@@ -2,9 +2,8 @@
   apt: name=vim-gnome state=present
   sudo: yes
 
-- name: be sure vim configurations are updated
-  get_url: url=https://raw.githubusercontent.com/drgarcia1986/.vimrc/minimal/.vimrc dest={{ ansible_env.HOME }}/.vimrc validate_certs=no
-  ignore_errors: true
+- name: be sure vim is configured
+  copy: src=vimrc dest={{ ansible_env.HOME }}/.vimrc owner={{ ansible_user_id }}
 
-- name: be sure vim color schema is configurated
-  git: repo=https://github.com/tomasr/molokai.git dest={{ ansible_env.HOME }}/.vim
+- name: be sure all plugins is installed
+  command: vim +NeoBundleInstall! +qall
