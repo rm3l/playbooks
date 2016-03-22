@@ -1,0 +1,3 @@
+- name: ensure ack is installed
+  pacman: name=ack state=present
+  sudo: yes
