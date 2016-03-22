@@ -1,0 +1,3 @@
+- name: ensure tree is installed
+  apt: name=tree state=present
+  sudo: yes
