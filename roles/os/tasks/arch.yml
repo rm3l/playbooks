@@ -1,0 +1,3 @@
+- name: update pacman packages cache
+  pacman: update_cache=yes
+  sudo: yes
