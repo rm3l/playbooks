@@ -8,24 +8,23 @@ set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 """"""""""""""""""""""""""""""""""
 " NeoBundle Plugin Manager Stuff "
 """"""""""""""""""""""""""""""""""
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+set runtimepath+=~/.vim/bundle/vundle.vim/
 
-let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+let vundle_readme=expand('~/.vim/bundle/vundle.vim/README.md')
 
-if !filereadable(neobundle_readme)
-  " install NeoBundle
+if !filereadable(vundle_readme)
+  " install vundle
   silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
+  silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle.vim/
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call vundle#begin(expand('~/.vim/bundle'))
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins Installation
-NeoBundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 
-call neobundle#end()
-NeoBundleCheck
+call vundle#end()
 
 filetype plugin indent on
 

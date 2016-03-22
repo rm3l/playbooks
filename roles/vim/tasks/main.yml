@@ -6,4 +6,4 @@
   copy: src=vimrc dest={{ ansible_env.HOME }}/.vimrc owner={{ ansible_user_id }}
 
 - name: be sure all plugins is installed
-  command: vim +NeoBundleInstall! +qall
+  command: vim +PluginInstall! +qall
