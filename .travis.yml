@@ -1,5 +1,5 @@
 script:
-    - ansible-playbook workstation.yml -vvvv
+    - ansible-playbook workstation.yml -vv
     - ansible-playbook workstation-sisimedia.yml -vv
 
 before_script:
