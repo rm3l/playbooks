@@ -1,6 +1,8 @@
-- name: ensure vim is installed
-  apt: name=vim-gnome state=present
-  sudo: yes
+- include: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- include: install.arch.yml
+  when: ansible_pkg_mgr == 'pacman'
 
 - name: be sure vim is configured
   copy: src=vimrc dest={{ ansible_env.HOME }}/.vimrc owner={{ ansible_user_id }}

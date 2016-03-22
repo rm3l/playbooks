@@ -1,0 +1,3 @@
+- name: ensure vim is installed
+  pacman: name=gvim state=present
+  sudo: yes
