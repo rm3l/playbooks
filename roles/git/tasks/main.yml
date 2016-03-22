@@ -1,6 +1,8 @@
-- name: ensure git is installed
-  apt: name=git state=present
-  sudo: yes
+- include: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- include: install.arch.yml
+  when: ansible_pkg_mgr == 'pacman'
 
 - name: be sure git is configured
   copy: src=gitconfig dest={{ ansible_env.HOME }}/.gitconfig owner={{ ansible_user_id }}
