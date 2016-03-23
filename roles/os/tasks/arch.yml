@@ -8,3 +8,16 @@
   with_items:
       - manjaro-keyring
       - archlinux-keyring
+      - gnupg
+
+- name: initialize the pacman keyring
+  command: pacman-key --init
+  sudo: yes
+
+- name: load the signature keys
+  command: pacman-key --populate archlinux manjaro
+  sudo: yes
+
+- name: refreash and update the signature keys
+  command: pacman-key --refresh-keys
+  sudo: yes
