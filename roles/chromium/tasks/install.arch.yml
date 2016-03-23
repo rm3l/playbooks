@@ -1,3 +1,0 @@
-- name: ensure chromium is installed
-  pacman: name=chromium state=present
-  sudo: yes
