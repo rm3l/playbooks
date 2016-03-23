@@ -1,3 +1,10 @@
 - name: update pacman packages cache
   pacman: update_cache=yes
   sudo: yes
+
+- name: ensure keyring is installed
+  pacman: name={{ item }} state=present
+  sudo: yes
+  with_items:
+      - manjaro-keyring
+      - archlinux-keyring
