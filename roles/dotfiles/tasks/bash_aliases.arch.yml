@@ -1,0 +1,7 @@
+- name: check if bashrc call source in bash_aliases
+  command: cat ~/.bashrc | grep bash_aliases
+  register: bashrc_return
+
+- name: be sure basrc will source bash_aliases
+  command: echo ". ~/.bash_aliases" > ~/.bashrc
+  when: len(bashrc_return.stdout) == 0
