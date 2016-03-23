@@ -3,7 +3,7 @@
   sudo: yes
 
 - name: ensure keyring is installed
-  pacman: name={{ item }} state=present
+  pacman: name={{ item }} state=latest
   sudo: yes
   with_items:
       - manjaro-keyring

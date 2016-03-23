@@ -1,3 +1,2 @@
-- name: ensure chromium is installed
-  pacman: name=chromium state=present
-  sudo: yes
+- name: ensure google-chrome is installed
+  command: yaourt -S google-chrome --noconfirm
