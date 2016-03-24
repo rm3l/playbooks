@@ -49,8 +49,11 @@ alias pbpaste='xclip -selection clipboard -o'
 #     percentage:          91%
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 
-
 # Virtualenvwrapper stuff
 export WORKON_HOME=~/venvs
 mkdir -p $WORKON_HOME
+{% if ansible_os_family == 'Debian' %}
 source /usr/local/bin/virtualenvwrapper.sh
+{% else %}
+source /usr/bin/virtualenvwrapper.sh
+{% endif %}
