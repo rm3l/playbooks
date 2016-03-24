@@ -43,3 +43,9 @@ alias pbpaste='xclip -selection clipboard -o'
 #     time to full:        21,2 minutes
 #     percentage:          91%
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
+
+
+# Virtualenvwrapper stuff
+export WORKON_HOME=~/venvs
+mkdir -p $WORKON_HOME
+source /usr/local/bin/virtualenvwrapper.sh

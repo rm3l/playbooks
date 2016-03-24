@@ -17,3 +17,7 @@
 - name: install virtualenv
   pip: name=virtualenv state=latest
   sudo: yes
+
+- name: install virtualenvwrapper
+  pip: name=virtualenvwrapper state=latest
+  sudo: yes
