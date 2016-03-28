@@ -101,7 +101,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Plugins Settings "
 """"""""""""""""""""
 " Netrw
-let g:netrw_list_hide= '.*\.swp$,.*\.pyc'
+let g:netrw_list_hide= '.*\.swp$,.*\.pyc,__pycache__'
 let g:netrw_localrmdir="rm -r"
 
 "" Syntastic
