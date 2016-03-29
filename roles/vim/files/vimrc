@@ -82,6 +82,21 @@ set t_Co=256
 " Save with root privilege
 command Wroot :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
+""""""""""
+" Abbrev "
+""""""""""
+" Or I use this abbrevs or remove my shift key
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
 """""""""""""""""
 " Auto commands "
 """""""""""""""""
