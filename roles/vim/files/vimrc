@@ -6,7 +6,7 @@ set modelines=0		" CVE-2007-2438
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 
 """"""""""""""""""""""""""""""""""
-" NeoBundle Plugin Manager Stuff "
+" Vundle Plugin Manager Stuff "
 """"""""""""""""""""""""""""""""""
 set runtimepath+=~/.vim/bundle/vundle.vim/
 
