@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged/')
 
 " Plugins Installation
 Plug 'tomasr/molokai'
-Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-dispatch'
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -79,11 +79,18 @@ set t_Co=256
 " To help in using of airline
 set laststatus=2
 
+" show traling spaces
+set list
+set listchars=trail:-
+
 """"""""""""
 " Commands "
 """"""""""""
 " Save with root privilege
 command Wroot :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+" remove trailing whitespaces
+command CleanTrail :%s/\s\+$//e
 
 """"""""""
 " Abbrev "
@@ -103,13 +110,11 @@ cnoreabbrev Qall qall
 """""""""""""""""
 " Auto commands "
 """""""""""""""""
-" remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
-
 " show colorcolumn for column 80 in python files
 augroup python
     au!
     autocmd FileType python set colorcolumn=80
+    autocmd BufWrite *.py :Make flake8 %
 augroup END
 
 " auto syntax for *.md files
@@ -119,18 +124,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Plugins Settings "
 """"""""""""""""""""
 " Netrw
-let g:netrw_list_hide= '.*\.swp$,.*\.pyc,__pycache__'
+let g:netrw_list_hide= '.*\.swp$,.*\.pyc,__pycache__,.DS_Store'
 let g:netrw_localrmdir="rm -r"
-
-" Syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers=['python', 'flake8']
 
 " IndentLine
 let g:indentLine_concealcursor = 0
