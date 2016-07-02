@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged/')
 " Plugins Installation
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-dispatch'
-Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -126,11 +125,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Netrw
 let g:netrw_list_hide= '.*\.swp$,.*\.pyc,__pycache__,.DS_Store'
 let g:netrw_localrmdir="rm -r"
-
-" IndentLine
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
 
 " Airline
 let g:airline_theme = 'powerlineish'
