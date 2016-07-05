@@ -23,6 +23,7 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-dispatch'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'drgarcia1986/python-compilers.vim'
 
 call plug#end()
 
@@ -113,7 +114,8 @@ cnoreabbrev Qall qall
 augroup python
     au!
     autocmd FileType python set colorcolumn=80
-    autocmd BufWrite *.py :Make flake8 %
+    autocmd FileType python let b:dispatch='flake8 %'
+    autocmd BufWrite *.py :Dispatch
 augroup END
 
 " auto syntax for *.md files
