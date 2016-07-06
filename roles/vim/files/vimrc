@@ -114,7 +114,7 @@ cnoreabbrev Qall qall
 augroup python
     au!
     autocmd FileType python set colorcolumn=80
-    autocmd FileType python let b:dispatch='flake8 %'
+    autocmd FileType python compiler flake8
     autocmd BufWrite *.py :Dispatch
 augroup END
 
