@@ -40,6 +40,11 @@ set smarttab
 
 set backspace=eol,start,indent
 
+"""""""""""""""""""""""""
+" Command mode settings "
+"""""""""""""""""""""""""
+set wildmenu
+
 """""""""""""""""""""""
 " Don't create backup "
 """""""""""""""""""""""
