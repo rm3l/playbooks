@@ -19,7 +19,6 @@ endif
 call plug#begin('~/.vim/plugged/')
 
 " Plugins Installation
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-dispatch'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -58,12 +57,7 @@ set ignorecase
 """""""""""""""""""
 " Visual settings "
 """""""""""""""""""
-" use this TRY..CATCH to avoid 'press enter to continue' in vim installation
-try
-    colorscheme molokai
-catch
-endtry
-
+colorscheme desert
 syntax on
 
 " highlight current line
