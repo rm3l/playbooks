@@ -64,6 +64,7 @@ set ignorecase
 """""""""""""""""""
 colorscheme desert
 syntax on
+highlight ColorColumn ctermbg=8
 
 " highlight current line
 set cursorline
