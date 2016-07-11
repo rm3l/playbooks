@@ -87,10 +87,13 @@ set listchars=trail:-
 " Commands "
 """"""""""""
 " Save with root privilege
-command Wroot :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command! Wroot :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " remove trailing whitespaces
-command CleanTrail :%s/\s\+$//e
+command! CleanTrail :%s/\s\+$//e
+
+" fix python import (based on isort)
+command! -nargs=* -range=% FixPythonImports :<line1>,<line2>! isort <args> -
 
 """"""""""
 " Abbrev "
