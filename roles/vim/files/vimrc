@@ -62,19 +62,20 @@ set ignorecase
 """""""""""""""""""
 " Visual settings "
 """""""""""""""""""
+" colors
+set t_Co=256
+
 colorscheme desert
 syntax on
+
+" color column (if set)
 highlight ColorColumn ctermbg=8
 
-" highlight current line
+" show cursor line
 set cursorline
-highlight CursorLine ctermbg=237
 
 " show linenumber
 set nu
-
-" colors
-set t_Co=256
 
 " To help in using of airline
 set laststatus=2
